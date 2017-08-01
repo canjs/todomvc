@@ -1,21 +1,22 @@
-import $ from 'jquery';
+'use strict';
 import route from 'can-route';
 import stache from 'can/view/stache/stache';
-// import './models/todo';
-// import './components/todo-app';
+import DefineMap from 'can-define/map/map';
+import './component';
 
-/* global $, can */
-(function () {
-	'use strict';
+const ViewModel = DefineMap.extend({
+	filter: 'string'
+});
 
-	$(function () {
-		// Set up a route that maps to the `filter` attribute
-		route('{filter}');
+let viewModel = new ViewModel();
+let app = document.getElementById('todoapp');
+let frag = stache('<todo-app />');
 
-		// Render #app-template
-		$('#todoapp').html(stache.from('app-template', {}));
+route.data = viewModel;
 
-		// Start the router
-		route.ready();
-	});
-})();
+route('{filter}');
+
+app.appendChild(frag(viewModel));
+
+// Start the router
+route.ready();

@@ -3,16 +3,19 @@
   "name": "todomvc",
   "main": "js/app",
   "dependencies": {
-    "can": "^3.0.0",
+    "can": "^3.9.0",
     "can-component": "^3.3.0",
-    "can-model": "^3.0.2",
+    "can-define": "^1.3.3",
     "can-route": "^3.2.1",
-    "jquery": "^3.2.1",
     "steal": "^1.5.6",
+    "steal-stache": "^3.1.0",
+    "steal-tools": "^1.7.0",
     "todomvc-app-css": "^2.1.0",
     "todomvc-common": "^1.0.3"
   },
   "devDependencies": {},
   "scripts": {},
-  "steal": {}
+  "steal": {
+    "plugins": ["steal-stache"]
+  }
 }
