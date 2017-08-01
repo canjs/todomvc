@@ -1,15 +1,21 @@
+import $ from 'jquery';
+import route from 'can-route';
+import stache from 'can/view/stache/stache';
+// import './models/todo';
+// import './components/todo-app';
+
 /* global $, can */
 (function () {
 	'use strict';
 
 	$(function () {
 		// Set up a route that maps to the `filter` attribute
-		can.route(':filter');
+		route('{filter}');
 
 		// Render #app-template
-		$('#todoapp').html(can.view('app-template', {}));
+		$('#todoapp').html(stache.from('app-template', {}));
 
 		// Start the router
-		can.route.ready();
+		route.ready();
 	});
 })();

@@ -1,10 +1,12 @@
+import Component from 'can-component';
+
 /* global can */
 (function (namespace) {
 	'use strict';
 
 	var ESCAPE_KEY = 27;
 
-	can.Component.extend({
+	Component.extend({
 		// Create this component on a tag  like `<todo-app>`.
 		tag: 'todo-app',
 		scope: {

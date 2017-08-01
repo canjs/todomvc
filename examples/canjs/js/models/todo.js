@@ -1,9 +1,11 @@
+import Model from 'can-model';
+
 /*global can */
 (function (namespace) {
 	'use strict';
 
 	// Basic Todo entry model
-	var Todo = can.Model.LocalStorage.extend({
+	var Todo = Model.extend({
 		storageName: 'todos-canjs'
 	}, {
 		init: function () {
